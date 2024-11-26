@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-export default function BoxBar({ searchInput }) {
+export default function Course({ searchInput }) {
   const url = "https://jsonplaceholder.typicode.com/users";
   const [data, setData] = useState([]);
   const search_parameters = Object.keys(Object.assign({}, ...data));

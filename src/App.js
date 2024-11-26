@@ -1,24 +1,26 @@
 import "./App.css";
-import React, { useState } from "react";
-import BrandPage from "./components/BrandPage";
+
 import { Routes, Route } from "react-router-dom";
-import Cards from "./components/Cards";
+import React, { useState } from "react";
 
 import "./index.css";
-import Api from "./components/Api";
-import UseEf from "./components/UseEf";
-import BoxBar from "./components/BoxBar";
-import Search from "./components/Search";
 
+import Search from "./components/Search";
+import Course from "./Pages/Course";
+import Contact from "./Pages/Contact";
+import Home from "./Pages/Home";
 function App() {
   const [searchInput, setSearchInput] = useState("");
 
   return (
     <>
       <Search searchInput={searchInput} setSearchInput={setSearchInput} />
-      {/* <Api /> */}
-      {/* <UseEf /> */}
-      <BoxBar searchInput={searchInput} />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Course" element={<Course searchInput={searchInput} />} />
+        <Route path="/Contact" element={<Contact />} />
+      </Routes>
     </>
   );
 }
